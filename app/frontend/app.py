@@ -15,7 +15,8 @@ user_pref = st.text_input(
 # Multi-platform file processor (Supports native camera tracking on phones)
 uploaded_file = st.file_uploader("Upload or snap a photo of a bookshelf", type=["jpg", "jpeg", "png"])
 
-BACKEND_URL = "http://127.0.0.1:8000/api/v1/scan"
+BACKEND_URL = "https://shelf-scanner-ai.onrender.com/api/v1/scan" # Update backend URL for production
+# BACKEND_URL = "http://127.0.0.1:8000/api/v1/scan" - for local test
 
 if uploaded_file is not None:
     # Display preview to user
