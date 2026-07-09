@@ -5,6 +5,7 @@ import logging
 
 logger = logging.getLogger("shelf-scanner-backend")
 
+
 class GeminiService:
     def __init__(self):
         genai.configure(api_key=settings.GEMINI_API_KEY)
@@ -20,11 +21,11 @@ class GeminiService:
                 f"recommend the top 3 best matching books visible on the shelf.\n"
                 f"3. Give a clear, 2-sentence explanation for each recommendation explaining why it fits their interest."
             )
-            
+
             # Sending both the raw optimized image and the text prompt to Gemini
             response = self.model.generate_content([prompt, image])
             return response.text
-            
+
         except Exception as e:
             logger.error(f"Failed to communicate with Gemini API: {str(e)}")
             raise RuntimeError("Gemini API processing failed.")
