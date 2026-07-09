@@ -15,20 +15,35 @@ Shelf Scanner AI analyzes a physical bookshelf image, automatically extracts vis
 User ➔ Streamlit UI ➔ FastAPI Gateway ➔ Pillow Optimization ➔ Gemini 2.5 Flash ➔ Structured Output
 ```
 
-## Project Structure
+## 📂 Project Structure
 
-``` text
+```text
 shelf-scanner-ai/
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml              # GitHub Actions CI/CD pipeline
+│
 ├── app/
+│   │
 │   ├── frontend/
-│   │   └── app.py       # Streamlit user interface
-│   ├── services/        # Business logic (gemini_service, image_service)
-│   ├── schemas/         # Data contracts and validations
-│   ├── config.py        # Environment variables & key loader
-│   └── main.py          # FastAPI server app entry point
-├── .env                 # Local environment secrets configuration
-├── requirements.txt     # Python system dependency locks
-└── README.md            # System documentation
+│   │   └── app.py                  # Streamlit user interface
+│   │
+│   ├── services/
+│   │   ├── gemini_service.py       # Gemini AI recommendation engine
+│   │   ├── image_service.py        # Image preprocessing & optimization
+│   │   └── __init__.py
+│   │
+│   │
+│   ├── config.py                   # Environment variables & configuration
+│   ├── main.py                     # FastAPI backend entry point
+│   └── __init__.py
+│
+├── .env                            # Local environment variables (ignored)
+├── .gitignore                      # Git ignore rules
+├── .python-version                 # Python version specification
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project documentation
 ```
 
 ## Installation
