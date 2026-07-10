@@ -81,8 +81,8 @@ Start the Backend Engine (Terminal 1):
 ``` bash
 uvicorn app.main:app --reload
 
-API Health Check Checkpoint: `http://127.0.0.1:8000/health
-Interactive Swagger UI Docs: `http://127.0.0.1:8000/docs
+API Health Check Checkpoint: http://127.0.0.1:8000/health
+Interactive Swagger UI Docs: http://127.0.0.1:8000/docs
 ```
 Start the Frontend Interface (Terminal 2):
 
