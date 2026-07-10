@@ -1,14 +1,31 @@
-# 📚 Shelf Scanner AI
+# 🛒 Shelf Scanner AI
 
-> An end-to-end Multimodal Vision AI bookshelf scanner built with FastAPI, Streamlit, Google Gemini 2.5 Flash, and Pillow.
+[![CI/CD Deployment pipeline](https://github.com/sathishasmi/shelf-scanner-ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/sathishasmi/shelf-scanner-ai/actions)
+
+> **Live Demo (Frontend):** [https://shelf-scanner-ai.streamlit.app](https://shelf-scanner-ai.streamlit.app)  
+> **Production API (Backend):** [https://shelf-scanner-ai.onrender.com](https://shelf-scanner-ai.onrender.com)
+
+An end-to-end Multimodal Vision AI bookshelf scanner built with FastAPI, Streamlit, Google Gemini 2.5 Flash, and Pillow.
+
+---
 
 ## 📝 Overview
-Shelf Scanner AI analyzes a physical bookshelf image, automatically extracts visible book titles/authors using multi-modal context, and recommends the best matching books based on a user's semantic reading preference.
+Shelf Scanner AI analyzes a physical bookshelf image, automatically extracts visible book titles and authors using multi-modal context, and recommends the best matching books based on a user's semantic reading preference.
 
-## 🛠️ Features
-- **Multimodal Vision Processing:** Leverages Gemini 2.5 Flash to simultaneously extract book spine text and perform contextual recommendations without requiring a separate heavy OCR pipeline.
-- **Production-Grade Latency Control:** Integrates a Pillow image preprocessing layer to downscale heavy smartphone images before transmitting payloads over the network, mitigating cloud API timeouts.
-- **Decoupled Architecture:** Features a clean separation of concerns with an independent presentation layer (Streamlit) and a core backend server gateway (FastAPI).
+## ⚡ Features
+* **Multimodal Vision Processing:** Leverages Gemini 2.5 Flash to simultaneously extract book spine text and perform contextual recommendations without requiring a separate heavy OCR pipeline.
+* **Production-Grade Latency Control:** Integrates a Pillow image preprocessing layer to downscale heavy smartphone images before transmitting payloads over the network, mitigating cloud API timeouts.
+* **Decoupled Architecture:** Features a clean separation of concerns with an independent presentation layer (Streamlit) and a core backend server gateway (FastAPI).
+* **Automated MLOps CI/CD Pipeline:** Configured with GitHub Actions to automatically run tests and trigger continuous deployments directly to Render upon every push to the `main` branch.
+
+---
+
+## 📸 User Interface & Demo
+
+| Upload & Analysis Interface | Results View 1 | Results View 2 |
+| :---: | :---: | :---: |
+| ![Upload UI](docs/screenshots/upload_ui.png) | ![Results UI](docs/screenshots/results_ui.png) | ![Results UI 1](docs/screenshots/results_ui1.png) |
+---
 
 ## 🏗️ System Architecture
 ``` text
@@ -81,15 +98,15 @@ Start the Backend Engine (Terminal 1):
 ``` bash
 uvicorn app.main:app --reload
 
-API Health Check Checkpoint: http://127.0.0.1:8000/health
-Interactive Swagger UI Docs: http://127.0.0.1:8000/docs
+* API Health Check Checkpoint: `http://127.0.0.1:8000/health`
+* Interactive Swagger UI Docs: `http://127.0.0.1:8000/docs`
 ```
 Start the Frontend Interface (Terminal 2):
 
 ``` bash
 streamlit run app/frontend/app.py
 
-User Interface Link: http://localhost:8501
+* User Interface Link: `http://localhost:8501`
 ```
 
 ## API Specification
